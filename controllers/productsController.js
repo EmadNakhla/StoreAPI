@@ -42,7 +42,7 @@ function productsController(Product) {
         return res.json({ success: false, messages: err });
       }
       res.status(200);
-      return res.json({ success: true, product, messages: `${products.name} product has been updated` });
+      return res.json({ success: true, product, messages: `${product.name} product has been updated` });
     });
   }
   function patch(req, res) {
@@ -61,7 +61,7 @@ function productsController(Product) {
         return res.json({ success: false, messages: err });
       }
       res.status(200);
-      return res.json({ success: true, product, messages: `${products.name} product has been updated` });
+      return res.json({ success: true, product, messages: `${product.name} product has been updated` });
     });
   }
   function deleteProduct(req, res) {
@@ -74,11 +74,11 @@ function productsController(Product) {
       return res.json({ success: true, messages: `${req.product.name} product has been deleted` });
     });
   }
-  function getPruductByID(req, res)  {
+  function getPruductByID(req, res) {
     const { product } = req;
     res.status = 200;
-    return res.json({ success: true, product, messages: `${product.name} products has been retrieved` }); 
-    }
+    return res.json({ success: true, product, messages: `${product.name} products has been retrieved` });
+  }
   return {
     post, get, put, patch, deleteProduct, getPruductByID,
   };

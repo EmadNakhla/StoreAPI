@@ -11,8 +11,8 @@ function routes(Product) {
   productsRouter.use('/products/:productId', (req, res, next) => {
     Product.findById(req.params.productId, (err, product) => {
       if (err) {
-      res.status(500);
-      return res.json({ success: false, messages: err });
+        res.status(500);
+        return res.json({ success: false, messages: err });
       }
       if (product) {
         req.product = product;
